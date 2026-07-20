@@ -22,4 +22,10 @@ class Student(BaseModel):
 
     #the above code i have written is so that the user gets a detailed description of what details they are filling...
 
+#-----------------Updating student details--------------------
+
+class StudentUpdate(BaseModel):
+    roll_no : Annotated[Optional[str], Field(default=None)]
+    first_name : Annotated
+
 
