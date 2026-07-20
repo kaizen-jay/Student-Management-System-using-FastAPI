@@ -13,7 +13,7 @@ class Student(BaseModel):
     roll_no : Annotated[str, Field(..., description='Roll no. of the student', examples=['001'])]
     first_name : Annotated[str, Field(..., description='First name of the student')]
     last_name : Annotated[str, Field(..., description=':Last name of the student')]
-    age : Annotated[str, Field(..., gt=0, lt=30, description='Age of the student')]
+    age : Annotated[int, Field(..., gt=0, lt=30, description='Age of the student')]
     gender : Annotated[Literal['Male', 'Female', 'Others'], Field(..., description='Gender of the student')]
     father_name : Annotated[str, Field(..., description="Father's name")]
     mother_name : Annotated[str, Field(..., description="Mother's name")]
@@ -26,6 +26,10 @@ class Student(BaseModel):
 
 class StudentUpdate(BaseModel):
     roll_no : Annotated[Optional[str], Field(default=None)]
-    first_name : Annotated
-
+    first_name : Annotated[Optional[str], Field(default=None)]
+    last_name : Annotated[Optional[str], Field(default=None)]
+    age : Annotated[Optional[str], Field(default=None)]
+    gender : Annotated[Optional[str], Field(default=None)]
+    father_name : Annotated[Optional[str], Field(default=None)]
+    mother_name : 
 
