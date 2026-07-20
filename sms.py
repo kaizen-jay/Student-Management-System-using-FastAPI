@@ -8,9 +8,10 @@ import json
 app = FastAPI()
 
 class Student(BaseModel):
-    
 
-print ("making github greeen")
+    roll_no : Annotated[str, Field(..., description='Roll no. of the student', examples=['001'])]
+    name : Annotated[str, Field(..., description='Name of the student')]
+    
 
 
 
