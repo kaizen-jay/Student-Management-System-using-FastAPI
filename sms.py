@@ -9,8 +9,13 @@ app = FastAPI()
 
 class Student(BaseModel):
 
+    enroll : Annotated[str, Field(..., description='ID of the student', examples='LNCFBTC00001')]
     roll_no : Annotated[str, Field(..., description='Roll no. of the student', examples=['001'])]
-    name : Annotated[str, Field(..., description='Name of the student')]
+    first_name : Annotated[str, Field(..., description='First name of the student')]
+    last_name : Annotated[str, Field(..., description=':Last name of the student')]
+    father_name : Annotated[str, Field(..., description="Father's name")]
+    mother_name : Annotated[str, Field(..., description="Mother's name")]
+    course : Annotated[str, Field(..., description='Course which student persue', examples=['B.Tech', 'BBA', 'B.Com']
     
 
 
