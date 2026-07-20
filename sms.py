@@ -31,5 +31,6 @@ class StudentUpdate(BaseModel):
     age : Annotated[Optional[str], Field(default=None)]
     gender : Annotated[Optional[str], Field(default=None)]
     father_name : Annotated[Optional[str], Field(default=None)]
-    mother_name : 
-
+    mother_name : Annotated[Optional[str], Field(default=None)]
+    course : Annotated[Optional[str], Field(default=None)]
+    city : Annotated[Optional[str], Field(default=None)]
