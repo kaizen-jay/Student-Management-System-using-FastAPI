@@ -9,8 +9,8 @@ app = FastAPI()
 
 class Student(BaseModel): #This is the Student pydantic model
 
-    enroll : Annotated[str, Field(..., description='Enrollment no. of the student', examples='LNCFBTC00001')]
-    roll_no : Annotated[str, Field(..., description='Roll no. of the student', examples=['001'])]
+    enroll : Annotated[str, Field(..., description="Enrollment no. of the student", examples="LNCFBTC00001")]
+    roll_no : Annotated[str, Field(..., description='Roll no. of the student', examples=["001"])]
     first_name : Annotated[str, Field(..., description='First name of the student')]
     last_name : Annotated[str, Field(..., description=':Last name of the student')]
     age : Annotated[int, Field(..., gt=0, lt=30, description='Age of the student')]
@@ -28,8 +28,8 @@ class StudentUpdate(BaseModel): #this is the StudentUpdate pydantic model
     roll_no : Annotated[Optional[str], Field(default=None)]
     first_name : Annotated[Optional[str], Field(default=None)]
     last_name : Annotated[Optional[str], Field(default=None)]
-    age : Annotated[Optional[str], Field(default=None)]
-    gender : Annotated[Optional[str], Field(default=None)]
+    age : Annotated[Optional[int], Field(default=None)]
+    gender : Annotated[Optional[Literal['Male', 'Female', 'Others']], Field(default=None)]
     father_name : Annotated[Optional[str], Field(default=None)]
     mother_name : Annotated[Optional[str], Field(default=None)]
     course : Annotated[Optional[str], Field(default=None)]
@@ -49,7 +49,7 @@ def load_data():
 
 def save_data(data):
     with open('students.json', 'w') as f:
-        json.dump(data, f)
+        json.dump(data, f, indent=4)
 #jo data hame input mil raha hai ham use data me dump kar rahe hai
 
 
@@ -71,4 +71,3 @@ def add_stu(student: Student):
     save_data(data)
 
     return JSONResponse(status_code=201, content={'message': 'Student created successfully'})
-",,,"
