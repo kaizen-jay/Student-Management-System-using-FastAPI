@@ -1,1 +1,13 @@
-{}
+{
+    "LNCFBTC21130": {
+        "roll_no": "126",
+        "first_name": "Jay Raj",
+        "last_name": "Haldar",
+        "age": 20,
+        "gender": "Male",
+        "father_name": "string",
+        "mother_name": "string",
+        "course": "B.Tech",
+        "city": "Panna"
+    }
+}

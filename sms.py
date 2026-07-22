@@ -17,7 +17,7 @@ class Student(BaseModel): #This is the Student pydantic model
     gender : Annotated[Literal['Male', 'Female', 'Others'], Field(..., description='Gender of the student')]
     father_name : Annotated[str, Field(..., description="Father's name")]
     mother_name : Annotated[str, Field(..., description="Mother's name")]
-    course : Annotated[str, Field(..., description='Course which student persue', examples=['B.Tech', 'BBA', 'B.Com'])]
+    course : Annotated[str, Field(..., description='Course which student persue', examples=["B.Tech", "BBA", "B.Com"])]
     city : Annotated[str, Field(..., description='City where student lives in')]
 
     #the above code i have written is so that the user gets a detailed description of what details they are filling...
@@ -60,7 +60,7 @@ def hello():
     return("STUDENT MANAGEMENT SYSTEM") #This is the first end point of our api
 
 @app.post('/add')
-def add_stu(student: Student):
+def add_student(student: Student):
     data = load_data()
     #check krna hai ki student already exist ya nahi
     if student.enroll in data:
