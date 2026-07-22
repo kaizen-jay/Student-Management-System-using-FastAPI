@@ -71,4 +71,4 @@ def add_stu(student: Student):
     save_data(data)
 
     return JSONResponse(status_code=201, content={'message': 'Student created successfully'})
-
+",,,"
