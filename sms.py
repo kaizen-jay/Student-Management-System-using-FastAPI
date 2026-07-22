@@ -9,7 +9,7 @@ app = FastAPI()
 
 class Student(BaseModel): #This is the Student pydantic model
 
-    enroll : Annotated[str, Field(..., description="Enrollment no. of the student", examples="LNCFBTC00001")]
+    enroll : Annotated[str, Field(..., description="Enrollment no. of the student", examples=["LNCFBTC00001"])]
     roll_no : Annotated[str, Field(..., description='Roll no. of the student', examples=["001"])]
     first_name : Annotated[str, Field(..., description='First name of the student')]
     last_name : Annotated[str, Field(..., description=':Last name of the student')]
