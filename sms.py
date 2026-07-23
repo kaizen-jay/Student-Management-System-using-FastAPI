@@ -68,7 +68,7 @@ def add_student(student: Student):
     if student.enroll in data:
         raise HTTPException(status_code=400, detail='Student already exist')
 
-    data[student.enroll] = student.model_dump(exclude=["enroll"]) 
+    data[student.enroll] = student.model_dump(exclude={"enroll"}) 
 
     save_data(data)
 
@@ -76,22 +76,24 @@ def add_student(student: Student):
 
 #----- Editing / Updating student endpoint-----
 
-@app.put('/edidt/{student_enroll}')
+@app.put('/edit/{student_enroll}')
 def update_student(student_enroll: str, student_update: StudentUpdate):
     data = load_data()
     if student_enroll not in data:
-        raise HTTPException(status_code=404,detail= 'Student nor found')
-    #if student is in the database then we will extract the info
+        raise HTTPException(status_code=404, detail='Student not found')
+
     existing_student_info = data[student_enroll]
     update_student_info = student_update.model_dump(exclude_unset=True)
+
     for key, value in update_student_info.items():
-        existing_student_info[key]= value
-        existing_student_info['enroll']= student_enroll
-        student_pydantic_object = Student(**existing_student_info)
-        existing_student_info = student_pydantic_object.model_dump(exclude='enroll')
-        data[student_enroll] = existing_student_info
-        #save data
-        save_data(data)
-        return JSONResponse(status_code=200, content={'message', 'Student updated'})
+        existing_student_info[key] = value
+
+    existing_student_info['enroll'] = student_enroll
+    student_pydantic_object = Student(**existing_student_info)
+    existing_student_info = student_pydantic_object.model_dump(exclude={'enroll'})
+    data[student_enroll] = existing_student_info
+
+    save_data(data)
+    return JSONResponse(status_code=200, content={'message': 'Student updated'})
 
 #-----------------------------------------------------
