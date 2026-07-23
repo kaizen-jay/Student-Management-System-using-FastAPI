@@ -71,3 +71,5 @@ def add_student(student: Student):
     save_data(data)
 
     return JSONResponse(status_code=201, content={'message': 'Student created successfully'})
+print("Test")
+
