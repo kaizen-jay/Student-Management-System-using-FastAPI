@@ -111,4 +111,15 @@ def update_student(student_enroll: str, student_update: StudentUpdate):
     save_data(data)
     return JSONResponse(status_code=200, content={'message': 'Student updated'})
 
-#-----------------------------------------------------
+#---------Deleting a student------------
+
+@app.delete('/delete/{student_enroll}')
+def delete_student(student_enroll: str):
+    #loading data
+    data = load_data()
+    #now we will check ki ho student enroll hame mil raha hai vo database me hai ya nahi
+    if student_enroll not in data:
+        raise HTTPException(status_code=404, detail='Student not found')
+    del data[student_enroll]
+    save_data(data)
+    return JSONResponse(status_code=200, content={'message':'Student deleted'})
