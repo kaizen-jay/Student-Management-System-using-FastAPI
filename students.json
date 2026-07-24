@@ -1,13 +1,35 @@
 {
-    "LNCFBTC21130": {
-        "roll_no": "string",
-        "first_name": "Jay Raj",
-        "last_name": "Haldar",
+    "LNCFBTC12345": {
+        "roll_no": "123",
+        "first_name": "Zerry",
+        "last_name": "Rizz",
+        "age": 20,
+        "gender": "Male",
+        "father_name": "xyz",
+        "mother_name": "abc",
+        "course": "B.Tech",
+        "city": "Panna"
+    },
+    "LNCFBTC21117": {
+        "roll_no": "100",
+        "first_name": "string",
+        "last_name": "string",
         "age": 20,
         "gender": "Male",
         "father_name": "string",
         "mother_name": "string",
-        "course": "B.Tech",
-        "city": "Panna"
+        "course": "string",
+        "city": "string"
+    },
+    "LNCFBTC00001": {
+        "roll_no": 1,
+        "first_name": "Harsh",
+        "last_name": "Pathak",
+        "age": 19,
+        "gender": "Male",
+        "father_name": "papa",
+        "mother_name": "mumma",
+        "course": "B.tech",
+        "city": "Nagod"
     }
 }
