@@ -64,7 +64,7 @@ def view():
     data = load_data()
     return data
 
-@app.get(/student/{student_enroll})
+@app.get('/student/{student_enroll}')
 def view_student(student_enroll: str):
     data = load_data()
     if student_enroll in data:
