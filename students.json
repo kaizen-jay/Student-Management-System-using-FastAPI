@@ -20,5 +20,16 @@
         "mother_name": "string",
         "course": "string",
         "city": "string"
+    },
+    "LNCFBTC00001": {
+        "roll_no": "001",
+        "name": "Yash",
+        "age": 22,
+        "gender": "Male",
+        "contact_no": 1234567890,
+        "father_name": "xyz",
+        "mother_name": "abc",
+        "course": "B.Tech",
+        "city": "London"
     }
 }

@@ -10,11 +10,11 @@ app = FastAPI()
 class Student(BaseModel): #This is the Student pydantic model
 
     enroll : Annotated[str, Field(..., description="Enrollment no. of the student", examples=["LNCFBTC00001"])]
-    roll_no : Annotated[int, Field(..., description='Roll no. of the student', examples=[])]
-    first_name : Annotated[str, Field(..., description='First name of the student')]
-    last_name : Annotated[str, Field(..., description=':Last name of the student')]
+    roll_no : Annotated[str, Field(..., description='Roll no. of the student', examples=['001'])]
+    name : Annotated[str, Field(..., description='First name of the student')]
     age : Annotated[int, Field(..., gt=0, lt=30, description='Age of the student')]
     gender : Annotated[Literal['Male', 'Female', 'Others'], Field(..., description='Gender of the student')]
+    contact_no : Annotated[int, Field(..., description='Contact no. of the student')]
     father_name : Annotated[str, Field(..., description="Father's name")]
     mother_name : Annotated[str, Field(..., description="Mother's name")]
     course : Annotated[str, Field(..., description='Course which student persue', examples=["B.Tech", "BBA", "B.Com"])]
@@ -25,11 +25,11 @@ class Student(BaseModel): #This is the Student pydantic model
 #-----------------Updating student details--------------------
 
 class StudentUpdate(BaseModel): #this is the StudentUpdate pydantic model
-    roll_no : Annotated[Optional[int], Field(default=None)]
-    first_name : Annotated[Optional[str], Field(default=None)]
-    last_name : Annotated[Optional[str], Field(default=None)]
+    roll_no : Annotated[Optional[str], Field(default=None)]
+    name : Annotated[Optional[str], Field(default=None)]
     age : Annotated[Optional[int], Field(default=None)]
     gender : Annotated[Optional[Literal['Male', 'Female', 'Others']], Field(default=None)]
+    contact_no : Annotated[Optional[int], Field(default=None)]
     father_name : Annotated[Optional[str], Field(default=None)]
     mother_name : Annotated[Optional[str], Field(default=None)]
     course : Annotated[Optional[str], Field(default=None)]
