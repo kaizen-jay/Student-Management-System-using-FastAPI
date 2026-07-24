@@ -20,16 +20,5 @@
         "mother_name": "string",
         "course": "string",
         "city": "string"
-    },
-    "LNCFBTC00001": {
-        "roll_no": 1,
-        "first_name": "Harsh",
-        "last_name": "Pathak",
-        "age": 19,
-        "gender": "Male",
-        "father_name": "papa",
-        "mother_name": "mumma",
-        "course": "B.tech",
-        "city": "Nagod"
     }
 }
