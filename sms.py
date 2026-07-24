@@ -59,6 +59,21 @@ def save_data(data):
 def hello():
     return{'message':"STUDENT MANAGEMENT SYSTEM"} #This is the first end point of our api
 
+@app.get('/view')
+def view():
+    data = load_data()
+    return data
+
+@app.get(/student/{student_enroll})
+def view_student(student_enroll: str):
+    data = load_data()
+    if student_enroll in data:
+        return data[student_enroll]
+    raise HTTPException(status_code=404, detail='Patient not found')
+
+
+
+
 #-----Creating / Adding student endpoint-----
 
 @app.post('/add')
