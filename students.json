@@ -31,5 +31,16 @@
         "mother_name": "abc",
         "course": "B.Tech",
         "city": "London"
+    },
+    "LNCFBTC21138": {
+        "roll_no": "134",
+        "name": "Brahma",
+        "age": 19,
+        "gender": "Male",
+        "contact_no": 9302524139,
+        "father_name": "Mukesh Sharma",
+        "mother_name": "xyz",
+        "course": "B.Tech",
+        "city": "Harda"
     }
 }
